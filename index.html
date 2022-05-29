@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Soat = O'clock</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+<h1> HTML CSS JS = O'clock </h1>
+<div class="clock">
+    <div class="num num1">
+        <div> 1</div>
+    </div>
+    <div class="num num2">
+        <div> 2</div>
+    </div>
+    <div class="num num3">
+        <div> 3</div>
+    </div>
+    <div class="num num4">
+        <div> 4</div>
+    </div>
+    <div class="num num5">
+        <div> 5</div>
+    </div>
+    <div class="num num6">
+        <div> 6</div>
+    </div>
+    <div class="num num7">
+        <div> 7</div>
+    </div>
+    <div class="num num8">
+        <div> 8</div>
+    </div>
+    <div class="num num9">
+        <div> 9</div>
+    </div>
+    <div class="num num10">
+        <div> 10</div>
+    </div>
+    <div class="num num11">
+        <div> 11</div>
+    </div>
+    <div class="num num12">
+        <div> 12</div>
+    </div>
+    <div class="hand" id="sec">
+        <div class="sec"></div>
+    </div>
+    <div class="hand" id="min">
+        <div class="min"></div>
+    </div>
+    <div class="hand" id="hour">
+        <div class="hour"></div>
+    </div>
+</div>
+<script>
+    var secDiv=document.getElementById('sec');
+    var minDiv=document.getElementById('min');
+    var hourDiv=document.getElementById('hour');
+    function myFunction() {
+        let date=new Date();   // Date() boshqa bir ozgaruvchiga ya'ni date ga  Obekt olayapmiz. Keyin uning
+        //ichidagi mahsulotlarini ishlatayapmiz
+        let sec=date.getSeconds()/60;
+        let min=(date.getMinutes()+sec)/60;
+        let hour=(date.getHours()+min)/12;
+        secDiv.style.transform="rotate(" + (sec*360)+"deg)";
+        minDiv.style.transform="rotate(" + (min*360)+"deg)";
+        hourDiv.style.transform="rotate(" + (hour*360)+"deg)";
+        setInterval(myFunction,1000);
+        //Bu har bir sekundda sekund strilkasi bir yurishi intervalini bildiradi agar uni 2000 ms qilib qoysangiz
+        // har 2 sekundda 2 birlikka siljiydi. Soatda 1 sekundda 1 birlik siljigani uchun 1000 ms qoyiladi
+        // 1s=1000 ms ga teng
+
+    }
+    myFunction();  //Funksiyani chaqirib qoyishimiz kerak
+</script>
+
+</body>
+</html>
